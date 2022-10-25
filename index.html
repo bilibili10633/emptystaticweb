@@ -1,12 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.bilibili.com/favicon.ico">
     <title>你就是歌姬吧！</title>
+    <style>
+        #movebox{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            height: 100%;
+            width: 100%;
+        }
+        body{
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery-color/2.1.2/jquery.color.js"></script>
 </head>
+
 <body>
-    <h1 style="margin: auto;">你就是歌姬吧！</h1>
+    <div id="movebox">
+        <h1>你就是歌姬吧！</h1>
+    </div>
+    <script>
+        let n=window.getComputedStyle($("#movebox")[0]);
+        $("#movebox").animate({
+            top:(window.innerHeight-n.height.split("px")[0])+"px",
+            color:"#66ccff"
+        },{
+            queue:true,
+            duration:6000
+        })
+        $("#movebox").animate({
+            top:0,
+            color:"#39c5bb",
+            left:(window.innerWidth-n.width.split("px")[0])+"px",
+        },{
+            queue:true,
+            duration:6000
+        })
+        $("#movebox").animate({
+            color:"#FF0000",
+            top:(window.innerHeight-n.height.split("px")[0])+"px",
+        },{
+            queue:true,
+            duration:6000
+        })
+        $("#movebox").animate({
+            color:"#000000",
+            top:0,
+            left:0
+        },{
+            queue:true,
+            duration:6000
+        })
+    </script>
 </body>
+
 </html>
